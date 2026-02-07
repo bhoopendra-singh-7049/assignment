@@ -1,36 +1,50 @@
 <section class="mt-14">
     <div class="max-w-7xl mx-auto px-4 lg:px-8">
+
         <div class="flex items-center justify-between mb-8">
             <h3 class="text-lg font-semibold">Promo Product</h3>
 
             <div class="flex items-center gap-4 text-green-500 text-sm">
                 <span class="cursor-pointer">See All</span>
                 <button class="w-3 h-3 flex items-center justify-center">
-                    <img src="assets/left-arrow.png" alt="left-arrow" srcset="">
+                    <i class="bi bi-chevron-left text-lg"></i>
                 </button>
                 <button class="w-3 h-3 flex items-center justify-center">
-                    <img src="assets/right-arrow.png" alt="left-arrow" srcset="">
+                    <i class="bi bi-chevron-right text-lg"></i>
                 </button>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
             @for (product of products; track $index) {
-            <div class="grid grid-cols-2 gap-6 items-stretch h-60">
-                <div class="relative bg-gray-100 rounded-xl h-full flex items-center justify-center">
-                    <span class="absolute top-3 left-3 bg-orange-400 text-white text-xs px-2 py-1 rounded">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6
+               items-start sm:items-stretch sm:h-60">
+
+                <div class="relative bg-gray-100 rounded-xl
+                 aspect-square sm:aspect-auto sm:h-full
+                 flex items-center justify-center">
+
+                    <span class="absolute top-3 left-3
+                   bg-orange-400 text-white text-xs px-2 py-1 rounded">
                         -{{ product.discount }}%
                     </span>
-                    <span class="text-gray-200 text-4xl">1:1</span>
+
+                    <span class="text-gray-200 text-4xl">1 : 1</span>
                 </div>
 
                 <div class="flex flex-col">
+
                     <p class="text-sm mb-2 font-medium">
                         {{ product.title }}
                     </p>
 
                     <div class="flex items-center gap-3">
-                        <span class="text-lg font-semibold">${{ product.price }}</span>
+                        <span class="text-lg font-semibold">
+                            ${{ product.price }}
+                        </span>
+
                         @if (product.oldPrice) {
                         <span class="text-sm text-gray-400 line-through">
                             ${{ product.oldPrice }}
@@ -44,7 +58,8 @@
                     </div>
 
                     <div class="h-1 bg-gray-200 rounded mt-2">
-                        <div class="h-1 bg-green-500 rounded" [style.width.%]="getProgress(product)"></div>
+                        <div class="h-1 bg-green-500 rounded" [style.width.%]="getProgress(product)">
+                        </div>
                     </div>
 
                     <div class="flex gap-2 mt-4 text-xs text-center">
@@ -62,7 +77,9 @@
                         </div>
                     </div>
 
-                    <button class="mt-auto bg-[#54d417] hover:bg-[#7ac64d] text-white py-2 rounded-lg w-full">
+                    <button class="mt-6 sm:mt-auto
+                   bg-[#54d417] hover:bg-[#7ac64d]
+                   text-white py-2 rounded-lg w-full">
                         Add To Cart
                     </button>
                 </div>
