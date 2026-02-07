@@ -1,0 +1,62 @@
+<section class="mt-16">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-xl font-semibold">Shop By Categories</h2>
+
+            <div class="flex items-center gap-4 text-sm text-[#54d417]">
+                <span class="cursor-pointer">See All</span>
+                <button class="w-8 h-8 flex items-center justify-center">‹</button>
+                <button class="w-8 h-8 flex items-center justify-center">›</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
+            @if (categories$ | async; as categories) {
+            @for (category of categories; track category.id) {
+            <div class="border rounded-lg p-5 flex flex-col items-center gap-3 cursor-pointer relative" [ngClass]="{
+          'bg-[#d8edceab] border-[#54d417]': activeCategoryId === category.id,
+          'bg-white border-gray-200': activeCategoryId !== category.id
+        }" (click)="onCategoryChange(category.id)">
+                <div class="w-16 h-16 flex items-center justify-center">
+                    <img [src]="category.icon" alt="" srcset="">
+                </div>
+
+                <span class="text-sm font-medium">
+                    {{ category.name }}
+                </span>
+
+                @if (activeCategoryId === category.id) {
+                <span class="absolute -bottom-2 w-4 h-4 bg-[#d8edceab]
+                   border-l border-b border-[#54d417]
+                   rotate-[315deg]">
+                </span>
+                }
+            </div>
+            }
+            }
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+            @if (filteredProducts$ | async; as products) {
+
+            @if (products.length > 0) {
+            @for (product of products; track product.id) {
+            <app-product-card [grid_col]="6" [product]="product">
+            </app-product-card>
+            }
+            } @else {
+            <!-- NO DATA -->
+            <div class="col-span-full text-center py-16 text-gray-500">
+                <p class="text-lg font-medium">No products found</p>
+                <p class="text-sm mt-1">
+                    Try selecting a different category
+                </p>
+            </div>
+            }
+
+            }
+        </div>
+
+
+    </div>
+</section>

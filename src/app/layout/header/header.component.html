@@ -1,0 +1,127 @@
+<div class="lg:hidden bg-black text-white">
+    <div class="flex items-center justify-between px-4 py-3">
+        <button class="text-2xl">☰</button>
+
+        <div class="flex items-center gap-6">
+            <i class="bi bi-search text-xl"></i>
+            <i class="bi bi-heart text-xl"></i>
+
+            <div class="relative">
+                <i class="bi bi-cart text-xl"></i>
+                <span
+                    class="absolute -top-2 -right-3 bg-orange-500 text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                    {{ cartCount$ | async }}
+                </span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="hidden lg:block">
+    <div class="bg-black text-white text-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-2">
+
+            <div class="flex gap-4 text-gray-300">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-envelope-fill"></i>
+            </div>
+
+            <div class="bg-black text-white">
+                <div class="max-w-7xl mx-auto py-2">
+                    <div class="flex justify-center items-center gap-2 text-sm tracking-wide">
+                        <span class="cursor-pointer hover:underline">Introduce</span>
+                        <span class="opacity-60">·</span>
+
+                        <span class="cursor-pointer hover:underline">
+                            Partner Incentives
+                        </span>
+                        <span class="opacity-60">·</span>
+
+                        <span class="cursor-pointer hover:underline">Promotion</span>
+                        <span class="opacity-60">·</span>
+
+                        <span class="cursor-pointer hover:underline">Contact</span>
+                        <span class="opacity-60">·</span>
+
+                        <span class="cursor-pointer hover:underline">
+                            Frequently asked questions
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-black border-t border-gray-800">
+        <div class="max-w-7xl mx-auto flex items-center justify-end gap-6 px-10 py-6">
+            <div class="flex items-center flex-1 max-w-3xl gap-2">
+                <div class="flex items-center w-full bg-white rounded-lg overflow-hidden">
+                    <input type="text" placeholder="What are you looking for?"
+                        class="flex-1 px-6 py-2.5 text-gray-500 outline-none" />
+
+                    <div class="flex items-center gap-3 bg-gray-100 px-6 py-2.5 text-gray-600">
+                        <span>Category</span>
+                        <i class="bi bi-chevron-down text-sm"></i>
+                    </div>
+                </div>
+
+                <button class="bg-[#69D237] hover:bg-[#54d417] text-white py-2.5 px-4 rounded">
+                    Search
+                </button>
+            </div>
+
+            <div class="flex items-center gap-6 text-white">
+                <i class="bi bi-heart text-xl cursor-pointer"></i>
+
+                <div class="relative cursor-pointer">
+                    <i class="bi bi-cart text-xl"></i>
+                    <span
+                        class="absolute -top-3 -right-4 bg-[#FF8054] w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium leading-none text-white">
+                        {{ cartCount$ | async }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="border-t shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center px-6 py-2.5">
+            <div class="flex items-center gap-3 text-sm font-medium cursor-pointer">
+                <i class="bi bi-list-ul text-xl"></i>
+                <span>Category</span>
+                <i class="bi bi-chevron-down text-sm ml-2"></i>
+            </div>
+
+            <nav class="flex gap-10 font-medium ml-auto mr-20">
+                <span class="text-sm cursor-pointer">Home</span>
+
+                <div class="flex items-center gap-3 cursor-pointer">
+                    <span class="text-sm">New Product</span>
+                    <i class="bi bi-chevron-down text-sm"></i>
+                </div>
+
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <span class="text-sm">Promotion</span>
+                    <span class="bg-[#FF8054] text-white text-xs px-2 py-0.5 rounded-full">
+                        HOT
+                    </span>
+                </div>
+            </nav>
+
+            <div class="flex gap-8 font-medium">
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <i class="bi bi-truck"></i>
+                    <span class="text-sm">Track Your Order</span>
+                </div>
+
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <i class="bi bi-person"></i>
+                    <span class="text-sm">Sign In / Register</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

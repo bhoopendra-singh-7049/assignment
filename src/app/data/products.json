@@ -1,0 +1,381 @@
+{
+    "categories": [
+        {
+            "id": "real_estate",
+            "name": "Real Estate",
+            "icon": "assets/home.png"
+        },
+        {
+            "id": "technology",
+            "name": "Technology",
+            "icon": "assets/tech.png"
+        },
+        {
+            "id": "watch",
+            "name": "Watch",
+            "icon": "assets/watch.png"
+        },
+        {
+            "id": "glasses",
+            "name": "Glasses",
+            "icon": "assets/glass.png"
+        },
+        {
+            "id": "cosmetic",
+            "name": "Cosmetics",
+            "icon": "assets/cosmetic.png"
+        },
+        {
+            "id": "luxury_food",
+            "name": "Luxury Food",
+            "icon": "assets/drink.png"
+        }
+    ],
+    "subCategories": [
+        {
+            "id": "all",
+            "name": "All",
+            "categoryId": "*"
+        },
+        {
+            "id": "laptop",
+            "name": "Laptop",
+            "categoryId": "technology"
+        },
+        {
+            "id": "smart_watch",
+            "name": "Smart Watch",
+            "categoryId": "technology"
+        },
+        {
+            "id": "accessories",
+            "name": "Accessories",
+            "categoryId": "technology"
+        },
+        {
+            "id": "mens_watch",
+            "name": "Men's Watch",
+            "categoryId": "watch"
+        },
+        {
+            "id": "womens_watch",
+            "name": "Women's Watch",
+            "categoryId": "watch"
+        },
+        {
+            "id": "lotion",
+            "name": "Lotion",
+            "categoryId": "cosmetic"
+        },
+        {
+            "id": "mask",
+            "name": "Mask",
+            "categoryId": "cosmetic"
+        },
+        {
+            "id": "rent",
+            "name": "For Rent",
+            "categoryId": "real_estate"
+        },
+        {
+            "id": "drink",
+            "name": "Drink",
+            "categoryId": "luxury_food"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "title": "Apple MacBook Pro 2019 MWP42SA/A",
+            "price": 2013.54,
+            "vendor": "Co., Ltd Minie Li",
+            "categoryId": "technology",
+            "subCategoryId": "laptop",
+            "badge": {
+                "text": "New",
+                "type": "new"
+            }
+        },
+        {
+            "id": 2,
+            "title": "Apple Watch Series 5 MWV62VN/A",
+            "price": 517.79,
+            "vendor": "247 Store",
+            "categoryId": "watch",
+            "subCategoryId": "smart_watch",
+            "badge": {
+                "text": "Favorite",
+                "type": "favorite"
+            }
+        },
+        {
+            "id": 3,
+            "title": "Apple MacBook Air MWTJ2SA/A Space Gray (2020)",
+            "price": 1099,
+            "oldPrice": 1193.71,
+            "vendor": "by Kimpine Calculator",
+            "categoryId": "technology",
+            "subCategoryId": "laptop",
+            "badge": {
+                "text": "-15%",
+                "type": "discount"
+            }
+        },
+        {
+            "id": 4,
+            "title": "Hand Watch Rossini - 5395T01G",
+            "price": 193.31,
+            "oldPrice": 0,
+            "discount": 0,
+            "vendor": "Co., Ltd Beautiful Li",
+            "categoryId": "technology",
+            "subCategoryId": "smart_watch",
+            "badge": {
+                "text": "Sold Out",
+                "type": "soldout"
+            }
+        },
+        {
+            "id": 5,
+            "title": "Apple MacBook Pro MWTJ2SA/A Space Gray",
+            "price": 1646.34,
+            "vendor": "Co., Ltd Minie Li",
+            "categoryId": "technology",
+            "subCategoryId": "laptop",
+            "badge": {
+                "text": "",
+                "type": ""
+            }
+        },
+        {
+            "id": 6,
+            "title": "Apple MacBook Pro 2020 MWP42SA/A Space Gray",
+            "price": 2142.98,
+            "vendor": "Co., Ltd Minie Li",
+            "categoryId": "technology",
+            "subCategoryId": "laptop",
+            "badge": {
+                "text": "",
+                "type": ""
+            }
+        },
+        {
+            "id": 7,
+            "title": "Logitech B175 Wireless Mouse",
+            "price": 15.86,
+            "vendor": "Co., Ltd Minie Li",
+            "categoryId": "technology",
+            "subCategoryId": "accessories",
+            "badge": {
+                "text": "Favorite",
+                "type": "favorite"
+            }
+        },
+        {
+            "id": 8,
+            "title": "Angel Whitening Treatment Lotion",
+            "price": 132.9,
+            "vendor": "Co., Ltd Beautiful Face",
+            "categoryId": "cosmetic",
+            "subCategoryId": "lotion",
+            "badge": {
+                "text": "Favorite",
+                "type": "favorite"
+            }
+        },
+        {
+            "id": 9,
+            "title": "Apartment for rent in Diamond",
+            "price": 4505,
+            "unit": "/month",
+            "vendor": "Flower Real Estate",
+            "categoryId": "real_estate",
+            "subCategoryId": "rent",
+            "badge": {
+                "text": "Deal",
+                "type": "deal"
+            }
+        },
+        {
+            "id": 10,
+            "title": "Apple Watch Series 5 MWV62VN/A",
+            "price": 514.51,
+            "oldPrice": 259.24,
+            "vendor": "Co., Ltd Minie Li",
+            "categoryId": "watch",
+            "subCategoryId": "mens_watch",
+            "badge": {
+                "text": "-49%",
+                "type": "discount"
+            }
+        },
+        {
+            "id": 11,
+            "title": "Hand Watch Rossini 1328W01A",
+            "price": 146.71,
+            "oldPrice": 94.32,
+            "vendor": "Co., Ltd SMART MARKETING",
+            "categoryId": "watch",
+            "subCategoryId": "mens_watch",
+            "badge": {
+                "text": "-12%",
+                "type": "discount"
+            }
+        },
+        {
+            "id": 12,
+            "title": "Hand Watch Rossini 5395T01G",
+            "price": 183.64,
+            "oldPrice": 193.31,
+            "vendor": "Co., Ltd Minie Li",
+            "categoryId": "watch",
+            "subCategoryId": "womens_watch",
+            "badge": {
+                "text": "-5%",
+                "type": "discount"
+            }
+        },
+        {
+            "id": 13,
+            "title": "Hand Watch Swiss Alpine Military 3293.1537",
+            "price": 215.31,
+            "vendor": "Co., Ltd SMART MARKETING",
+            "categoryId": "watch",
+            "subCategoryId": "womens_watch",
+            "badge": {
+                "text": "New",
+                "type": "new"
+            }
+        },
+        {
+            "id": 14,
+            "title": "Watch For Man Larmes LM-TF004.OT49G.211.4NB - Optimus Prime",
+            "price": 73.01,
+            "vendor": "Mobile World",
+            "categoryId": "watch",
+            "subCategoryId": "womens_watch",
+            "badge": {
+                "text": "New",
+                "type": "new"
+            }
+        },
+        {
+            "id": 15,
+            "title": "Hand Watch For Man Citizen BI5000-87L",
+            "price": 66.79,
+            "vendor": "Co., Ltd Minie Li",
+            "categoryId": "watch",
+            "subCategoryId": "mens_watch"
+        },
+        {
+            "id": 16,
+            "title": "CIC2 Skin Decode Kit",
+            "price": 690.38,
+            "vendor": "Co., LTD Baby Girl",
+            "categoryId": "cosmetic",
+            "subCategoryId": "",
+            "badge": {
+                "text": "New",
+                "type": "new"
+            }
+        },
+        {
+            "id": 17,
+            "title": "Sunscreen moisturizing intensify",
+            "price": 69.04,
+            "vendor": "Co., LTD Baby Girl",
+            "categoryId": "cosmetic",
+            "subCategoryId": "",
+            "badge": {
+                "text": "Sold Out",
+                "type": "soldout"
+            }
+        },
+        {
+            "id": 18,
+            "title": "Anti-allergy serum",
+            "price": 132.90,
+            "vendor": "Co., Ltd Byware Cosmetic",
+            "categoryId": "cosmetic",
+            "subCategoryId": ""
+        },
+        {
+            "id": 19,
+            "title": "Apartment for rent in GELA CENTRAL PARK 1,2,3,4 PN and LAND 72",
+            "price": 2500,
+            "unit": "/month",
+            "vendor": "Flower Real Estate",
+            "categoryId": "real_estate",
+            "subCategoryId": "rent",
+            "badge": {
+                "text": "New",
+                "type": "new"
+            }
+        },
+        {
+            "id": 20,
+            "title": "For Rent DALA GOLDEN RIVER (Ba Son) District 1",
+            "unit": "/month",
+            "vendor": "Vanegroup",
+            "categoryId": "real_estate",
+            "subCategoryId": "rent",
+            "badge": {
+                "text": "Watch a lot",
+                "type": "watch_a_lot"
+            }
+        },
+        {
+            "id": 21,
+            "title": "Apartment for rent in District 10, Ha Do CENTROSA GARDEN",
+            "price": 517.79,
+            "unit": "/month",
+            "vendor": "247 REAL ESTATE",
+            "categoryId": "real_estate",
+            "subCategoryId": "rent",
+            "badge": {
+                "text": "Ordered",
+                "type": "ordered"
+            }
+        },
+        {
+            "id": 22,
+            "title": "Fujiwa alkaline ion drink 1250ml - Barrel of 12 bottles",
+            "price": 32,
+            "vendor": "Co., Ltd FUJIWA USA",
+            "categoryId": "luxury_food",
+            "subCategoryId": "",
+            "badge": {
+                "text": "New",
+                "type": "new"
+            }
+        },
+        {
+            "id": 23,
+            "title": "Fujiwa alkaline drinking water in 4 bottles of 5L (with faucet)",
+            "price": 2300,
+            "vendor": "Co., Ltd FUJIWA USA",
+            "categoryId": "luxury_food",
+            "subCategoryId": "",
+            "badge": {
+                "text": "New",
+                "type": "new"
+            }
+        },
+        {
+            "id": 24,
+            "title": "Pure Kinh Mon Tapioca Flour WATAPY",
+            "price": 58,
+            "vendor": "Gesan Investment Joint Stock Company",
+            "categoryId": "luxury_food",
+            "subCategoryId": ""
+        },
+        {
+            "id": 25,
+            "title": "Oak Wine",
+            "price": 517.79,
+            "vendor": "Gesan Investment Joint Stock Company",
+            "categoryId": "luxury_food",
+            "subCategoryId": "drink"
+        }
+    ]
+}

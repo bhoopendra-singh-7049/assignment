@@ -1,0 +1,33 @@
+<section class="mt-8 w-full h-[420px] lg:h-[520px] bg-gray-100 relative" [ngStyle]="{
+    'background-image': '',
+    'background-size': 'cover',
+    'background-position': 'center'
+  }">
+    <!-- Overlay (optional, improves text visibility) -->
+    <div class="absolute inset-0 bg-black/10"></div>
+
+    <!-- CONTENT -->
+    <div class="relative max-w-7xl mx-auto h-full px-4 lg:px-8
+              flex items-center justify-end">
+
+        <div class="text-right max-w-xl">
+            <p class="text-sm text-white/80 mb-3">
+                {{ banner.label }}
+            </p>
+
+            <h1 class="text-3xl lg:text-5xl font-bold text-white leading-tight">
+                {{ banner.title1 }}
+            </h1>
+
+            <h2 class="text-3xl lg:text-5xl font-bold text-white mt-2">
+                {{ banner.title2 }}
+            </h2>
+
+            <button class="mt-8 bg-[#54d417] hover:bg-[#7ac64d]
+               text-white px-6 py-3 rounded-lg">
+                {{ banner.button }}
+            </button>
+        </div>
+
+    </div>
+</section>

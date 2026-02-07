@@ -1,0 +1,23 @@
+<section class="mt-12">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            @for (banner of banners; track $index) {
+            <div class="bg-gray-100 rounded-lg p-10 lg:p-14 flex flex-col justify-center">
+                <p class="text-sm text-gray-500 mb-4">
+                    {{ banner.label }}
+                </p>
+
+                <h2 class="text-2xl lg:text-3xl font-bold leading-snug">
+                    {{ banner.titleLine1 }} <br />
+                    {{ banner.titleLine2 }}
+                </h2>
+
+                <button class="mt-8 bg-[#54d417] hover:bg-[#7cc94b]
+                     text-white px-6 py-2.5 rounded-lg w-max">
+                    {{ banner.buttonText }}
+                </button>
+            </div>
+            }
+        </div>
+    </div>
+</section>

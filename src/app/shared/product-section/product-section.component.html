@@ -1,0 +1,45 @@
+<section class="mt-16">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+
+        <!-- HEADER -->
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-xl font-semibold">{{ title }}</h2>
+
+            <!-- TABS -->
+            <div class="flex items-center gap-6 text-sm">
+                <button *ngFor="let tab of tabs" (click)="onTabChange(tab.id)" class="relative pb-1"
+                    [class.text-green-500]="activeTab === tab.id">
+                    {{ tab.label }}
+                    <span *ngIf="activeTab === tab.id"
+                        class="absolute left-0 -bottom-1 w-full h-0.5 bg-green-500"></span>
+                </button>
+
+                <!-- ARROWS -->
+                <div class="flex gap-2 ml-4">
+                    <button class="w-7 h-7 flex items-center justify-center">‹</button>
+                    <button class="w-7 h-7 flex items-center justify-center">›</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCTS GRID -->
+        <div class="grid gap-4" [ngClass]="{
+    'grid-cols-2 sm:grid-cols-3 lg:grid-cols-3': grid_col === 3,
+    'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4': grid_col === 4,
+    'grid-cols-2 sm:grid-cols-3 lg:grid-cols-6': grid_col === 6
+  }">
+            @if (filteredProducts.length > 0) {
+            <app-product-card *ngFor="let product of filteredProducts" [product]="product" [grid_col]="grid_col">
+            </app-product-card>
+            }@else {
+            <div class="col-span-full text-center py-16 text-gray-500">
+                <p class="text-lg font-medium">No products found</p>
+                <p class="text-sm mt-1">
+                    Try selecting a different category
+                </p>
+            </div>
+            }
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<app-hero></app-hero>
+<app-shop-by-category></app-shop-by-category>
+<app-promo-banners></app-promo-banners>
+<app-promo-products></app-promo-products>
+<app-hero-banner></app-hero-banner>
+
+@if (products$ | async; as products) {
+<app-product-section title="Technology" categoryId="technology" [tabs]="techTabs" [products]="products" [grid_col]="3">
+</app-product-section>
+
+<app-product-section title="Watch" categoryId="watch" [tabs]="watchTabs" [products]="products" [grid_col]="6">
+</app-product-section>
+
+<app-product-section title="Cosmetics" categoryId="cosmetic" [tabs]="cosmeticTabs" [products]="products" [grid_col]="4">
+</app-product-section>
+
+<app-product-section title="Real Estate" categoryId="real_estate" [tabs]="realEstateTabs" [products]="products"
+    [grid_col]="4">
+</app-product-section>
+
+<app-product-section title="Luxury Food" categoryId="luxury_food" [tabs]="luxuryFoodTabs" [products]="products"
+    [grid_col]="4">
+</app-product-section>
+}
+
+<app-service-features></app-service-features>
