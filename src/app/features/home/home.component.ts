@@ -34,11 +34,7 @@ export class HomeComponent implements OnInit {
     this.products$ = this.productStateService.products$
   }
 
-  filterProducts(
-    products: IProductModel[],
-    categoryId: string,
-    tabId: string
-  ): IProductModel[] {
+  filterProducts(products: IProductModel[], categoryId: string, tabId: string): IProductModel[] {
     return products.filter(p =>
       p.categoryId === categoryId &&
       (tabId === 'all' || p.subCategoryId === tabId)
@@ -53,8 +49,6 @@ export class HomeComponent implements OnInit {
     { id: 'desktop', label: 'Desktop' },
     { id: 'accessories', label: 'Accessories' }
   ];
-
-  techProducts: IProductModel[] = []
 
   watchTabs = [
     { id: 'all', label: 'All' },

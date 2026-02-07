@@ -11,7 +11,7 @@ export class CartService {
 
   private readonly cartItems: IProductModel[] = [];
 
-  addToCart(product: IProductModel) {
+  addToCart(product: IProductModel): void {
     this.cartItems.push(product);
     this.cartCountSubject.next(this.cartItems.length);
   }

@@ -39,11 +39,11 @@ export class ProductStateService {
     )
   );
 
-  setCategory(category: string) {
+  setCategory(category: string): void {
     this.selectedCategory$.next(category);
   }
 
-  setSearch(text: string) {
+  setSearch(text: string): void {
     this.searchText$.next(text);
   }
 }

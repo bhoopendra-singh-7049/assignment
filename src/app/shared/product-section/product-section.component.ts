@@ -19,15 +19,15 @@ export class ProductSectionComponent {
 
   activeTab = 'all';
 
-  setTab(tabId: string) {
-    this.activeTab = tabId;
-  }
-
   get filteredProducts(): IProductModel[] {
     return this.products.filter(p =>
       p.categoryId === this.categoryId &&
       (this.activeTab === 'all' || p.subCategoryId === this.activeTab)
     );
+  }
+
+  setTab(tabId: string): void {
+    this.activeTab = tabId;
   }
 
   onTabChange(tabId: string): void {

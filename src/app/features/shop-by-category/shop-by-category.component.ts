@@ -28,11 +28,9 @@ export class ShopByCategoryComponent implements OnInit {
       this.productStateService.products$
     ]).pipe(
       map(([products]) =>
-        this.activeCategoryId === 'all'
-          ? products
-          : products.filter(
-            product => product.categoryId === this.activeCategoryId
-          )
+        this.activeCategoryId === 'all' ? products : products.filter(
+          product => product.categoryId === this.activeCategoryId
+        )
       )
     );
   }

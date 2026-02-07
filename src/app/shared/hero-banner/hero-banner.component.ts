@@ -13,6 +13,6 @@ export class HeroBannerComponent {
     title1: 'FASHIONABLE WALLETS',
     title2: 'BIG GOOD SALE FOR HER',
     button: 'Order Now',
-    bgImage: 'assets/images/hero-wallet.jpg' // change path
+    bgImage: 'assets/images/hero-wallet.jpg'
   };
 }
