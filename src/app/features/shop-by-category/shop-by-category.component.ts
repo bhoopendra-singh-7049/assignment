@@ -16,6 +16,7 @@ export class ShopByCategoryComponent implements OnInit {
   filteredProducts$!: Observable<IProductModel[]>;
 
   activeCategoryId: string = 'technology';
+  activeCategoryIndex: number = 0;
 
   constructor(
     private readonly productStateService: ProductStateService

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { IProductModel } from '../../core/models/product.model';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../core/services/cart.service';
@@ -12,6 +12,8 @@ import { CartService } from '../../core/services/cart.service';
 export class ProductCardComponent {
   @Input() product!: IProductModel;
   @Input() grid_col!: number;
+
+  successMap: Record<number, boolean> = {};
 
   get isHorizontal(): boolean {
     return this.grid_col === 3;
@@ -38,14 +40,25 @@ export class ProductCardComponent {
     }
   }
 
-  constructor(private readonly cartService: CartService) { }
+  constructor(
+    private readonly cartService: CartService,
+    private readonly cdr: ChangeDetectorRef
+  ) { }
 
   addToCart(product: IProductModel): void {
     this.cartService.addToCart(product);
+
+    this.successMap[product.id] = true;
+    this.cdr.markForCheck();
+
+    setTimeout(() => {
+      this.successMap[product.id] = false;
+      this.cdr.markForCheck();
+    }, 2000);
   }
 
-  addToWishlist(product: any) {
-    console.log('Add to wishlist:', product);
+  addToWishlist(product: IProductModel) {
+    this.cartService.addToWishlist(product);
   }
 
   viewProduct(product: any) {

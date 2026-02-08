@@ -4,15 +4,21 @@
 
         <div class="flex items-center gap-6">
             <i class="bi bi-search text-xl"></i>
-            <i class="bi bi-heart text-xl"></i>
 
             <div class="relative">
-                <i class="bi bi-cart text-xl"></i>
+                <i class="bi bi-heart text-xl"></i>
                 <span
-                    class="absolute -top-2 -right-3 bg-orange-500 text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                    {{ cartCount$ | async }}
+                    class="absolute -top-2 -right-3 bg-[#FF8054] text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                    {{ wishlistCount$ | async }}
                 </span>
             </div>
+            <button class="relative" (click)="cartService.showCart = !cartService.showCart">
+                <i class="bi bi-cart text-xl"></i>
+                <span
+                    class="absolute -top-2 -right-3 bg-[#FF8054] text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                    {{ cartCount$ | async }}
+                </span>
+            </button>
         </div>
 
     </div>
@@ -68,21 +74,27 @@
                     </div>
                 </div>
 
-                <button class="bg-[#69D237] hover:bg-[#54d417] text-white py-2.5 px-4 rounded">
+                <button class="bg-[#69D237] hover:bg-[#54d417] text-white py-2.5 px-4 rounded-lg">
                     Search
                 </button>
             </div>
 
             <div class="flex items-center gap-6 text-white">
-                <i class="bi bi-heart text-xl cursor-pointer"></i>
+                <div class="relative">
+                    <i class="bi bi-heart text-xl"></i>
+                    <span
+                        class="absolute -top-3 -right-4 bg-[#FF8054] w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium leading-none text-white">
+                        {{ wishlistCount$ | async }}
+                    </span>
+                </div>
 
-                <div class="relative cursor-pointer">
+                <button class="relative cursor-pointer" (click)="cartService.showCart = !cartService.showCart">
                     <i class="bi bi-cart text-xl"></i>
                     <span
                         class="absolute -top-3 -right-4 bg-[#FF8054] w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium leading-none text-white">
                         {{ cartCount$ | async }}
                     </span>
-                </div>
+                </button>
             </div>
         </div>
     </div>
@@ -124,4 +136,8 @@
             </div>
         </div>
     </div>
+
+    @if (cartService.showCart) {
+    <app-cart-popup></app-cart-popup>
+    }
 </div>

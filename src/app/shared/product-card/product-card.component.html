@@ -28,7 +28,11 @@
           @if (product.badge?.type !== 'soldout') {
           <button (click)="addToCart(product)"
             class="bg-[#54d417] hover:bg-green-500 text-white text-sm font-semibold py-1 rounded-sm transition">
+            @if (!successMap[product.id]) {
             Add To Cart
+            } @else {
+            <i class="bi bi-check2 text-sm"></i>
+            }
           </button>
           }
         </div>
@@ -106,7 +110,11 @@
         @if (product.badge?.type !== 'soldout') {
         <button (click)="addToCart(product)"
           class="bg-[#54d417] hover:bg-green-500 text-white text-sm font-semibold py-1 rounded-sm transition">
+          @if (!successMap[product.id]) {
           Add To Cart
+          } @else {
+          <i class="bi bi-check2 text-sm"></i>
+          }
         </button>
         }
       </div>

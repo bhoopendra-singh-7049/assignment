@@ -79,7 +79,11 @@
 
                     <button (click)="addToCart(product)"
                         class="mt-6 sm:mt-auto bg-[#54d417] hover:bg-[#7ac64d] text-white py-2 rounded-lg w-full">
+                        @if (!successMap[product.id]) {
                         Add To Cart
+                        } @else {
+                        <i class="bi bi-check2 text-sm"></i>
+                        }
                     </button>
                 </div>
             </div>

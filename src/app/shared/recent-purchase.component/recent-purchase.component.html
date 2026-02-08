@@ -1,0 +1,50 @@
+@if(visible){
+<div class="fixed bottom-10 left-4 z-9999 w-[320px] sm:w-95 bg-white rounded-lg shadow-xl p-4">
+    <div class="flex gap-4">
+
+        <div class="w-20 h-20 bg-gray-100 rounded-lg
+             flex items-center justify-center
+             text-gray-200 text-sm shrink-0">
+            1 : 1
+        </div>
+
+        <div class="flex-1">
+
+            <div class="flex justify-between items-start">
+                <p class="text-sm text-gray-500">
+                    A customer has just bought
+                </p>
+
+                <button (click)="close()" class="text-gray-400 hover:text-gray-700 text-lg leading-none">
+                    &times;
+                </button>
+            </div>
+
+            <p class="text-sm font-semibold mt-1 leading-snug">
+                UV Resistant Glasses - Imported
+            </p>
+
+            <div class="flex items-center justify-between mt-2">
+
+                <div class="flex items-center gap-1 text-yellow-400 text-sm">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
+                    <span class="text-gray-500 ml-1">(13)</span>
+                </div>
+
+                <span class="text-green-500 font-semibold text-lg">
+                    $250
+                </span>
+            </div>
+
+            <div class="flex justify-between text-xs text-gray-500 mt-2">
+                <span>15 minutes ago</span>
+                <span>From New York</span>
+            </div>
+        </div>
+    </div>
+</div>
+}
