@@ -20,8 +20,10 @@
                 </span>
             </button>
         </div>
-
     </div>
+    @if (cartService.showCart) {
+    <app-cart-popup></app-cart-popup>
+    }
 </div>
 
 <div class="hidden lg:block">
