@@ -1,3 +1,5 @@
+import { IProductModel } from "./product.model";
+
 export interface IPromoProductModel {
     id: number;
     title: string;
@@ -12,4 +14,9 @@ export interface IPromoProductModel {
         min: number;
         sec: number;
     };
+}
+
+export interface CartItem {
+    product: IProductModel | IPromoProductModel;
+    quantity: number;
 }

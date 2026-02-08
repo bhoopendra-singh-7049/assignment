@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, combineLatest, map } from 'rxjs';
 import data from '../../data/products.json';
 import { IProductModel, ProductData } from '../models/product.model';
+import { IPromoProductModel } from '../models/promo-product.model';
 
 const productsData = data as ProductData;
 
@@ -10,6 +11,10 @@ export class ProductStateService {
 
   products$ = new BehaviorSubject<IProductModel[]>(
     productsData.products
+  );
+
+  promoProducts$ = new BehaviorSubject<IPromoProductModel[]>(
+    productsData.promoProducts
   );
 
   private readonly categories$ = new BehaviorSubject(

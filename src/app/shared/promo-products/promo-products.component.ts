@@ -1,37 +1,31 @@
 import { Component } from '@angular/core';
 import { IPromoProductModel } from '../../core/models/promo-product.model';
+import { Observable } from 'rxjs';
+import { ProductStateService } from '../../core/services/product-state.service';
+import { CommonModule } from '@angular/common';
+import { CartService } from '../../core/services/cart.service';
 
 @Component({
   selector: 'app-promo-products',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './promo-products.component.html',
   styleUrl: './promo-products.component.css',
 })
 export class PromoProductsComponent {
-  products: IPromoProductModel[] = [
-    {
-      id: 1,
-      title: 'Apple Macbook Air MWTJ2SA/A Space Grey (2020)',
-      price: 1099,
-      oldPrice: 1193.71,
-      discount: 15,
-      sold: 700,
-      stock: 300,
-      timer: { day: 123, hour: 42, min: 0, sec: 8 }
-    },
-    {
-      id: 2,
-      title: 'Apple Watch Series 5 MWV62VN/A',
-      price: 514.51,
-      oldPrice: 539.06,
-      discount: 12,
-      sold: 700,
-      stock: 300,
-      timer: { day: 123, hour: 42, min: 0, sec: 8 }
-    }
-  ];
+  promoProducts$!: Observable<IPromoProductModel[]>;
+
+  constructor(
+    private readonly productStateService: ProductStateService,
+    private readonly cartService: CartService
+  ) {
+    this.promoProducts$ = this.productStateService.promoProducts$;
+  }
 
   getProgress(product: IPromoProductModel): number {
     return (product.sold / (product.sold + product.stock)) * 100;
+  }
+
+  addToCart(product: IPromoProductModel): void {
+    this.cartService.addToCart(product);
   }
 }

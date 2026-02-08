@@ -16,18 +16,18 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-            @for (product of products; track $index) {
+            @if (promoProducts$ | async; as promoProducts) {
+            @for (product of promoProducts; track $index) {
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6
-               items-start sm:items-stretch sm:h-60">
+                   items-start sm:items-stretch sm:h-60">
 
                 <div class="relative bg-gray-100 rounded-xl
-                 aspect-square sm:aspect-auto sm:h-full
-                 flex items-center justify-center">
+                     aspect-square sm:aspect-auto sm:h-full
+                     flex items-center justify-center">
 
                     <span class="absolute top-3 left-3
-                   bg-orange-400 text-white text-xs px-2 py-1 rounded">
+                       bg-orange-400 text-white text-xs px-2 py-1 rounded">
                         -{{ product.discount }}%
                     </span>
 
@@ -77,13 +77,13 @@
                         </div>
                     </div>
 
-                    <button class="mt-6 sm:mt-auto
-                   bg-[#54d417] hover:bg-[#7ac64d]
-                   text-white py-2 rounded-lg w-full">
+                    <button (click)="addToCart(product)"
+                        class="mt-6 sm:mt-auto bg-[#54d417] hover:bg-[#7ac64d] text-white py-2 rounded-lg w-full">
                         Add To Cart
                     </button>
                 </div>
             </div>
+            }
             }
         </div>
     </div>

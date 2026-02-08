@@ -1,26 +1,64 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { IProductModel } from '../models/product.model';
+import { CartItem, IPromoProductModel } from '../models/promo-product.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
+
+  private readonly cartItems: CartItem[] = [];
+
   private readonly cartCountSubject = new BehaviorSubject<number>(0);
   cartCount$ = this.cartCountSubject.asObservable();
 
-  private readonly cartItems: IProductModel[] = [];
+  addToCart(product: IProductModel | IPromoProductModel): void {
+    const existingItem = this.cartItems.find(
+      item => item.product.id === product.id
+    );
 
-  addToCart(product: IProductModel): void {
-    this.cartItems.push(product);
-    this.cartCountSubject.next(this.cartItems.length);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      this.cartItems.push({
+        product,
+        quantity: 1,
+      });
+    }
+
+    this.updateCartCount();
+  }
+
+  private updateCartCount(): void {
+    const totalCount = this.cartItems.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
+    this.cartCountSubject.next(totalCount);
   }
 
   getCartCount(): number {
-    return this.cartItems.length;
+    return this.cartCountSubject.value;
   }
 
-  getCartItems(): IProductModel[] {
+  getCartItems(): CartItem[] {
     return this.cartItems;
+  }
+
+  removeFromCart(productId: number): void {
+    const index = this.cartItems.findIndex(
+      item => item.product.id === productId
+    );
+
+    if (index !== -1) {
+      this.cartItems.splice(index, 1);
+      this.updateCartCount();
+    }
+  }
+
+  clearCart(): void {
+    this.cartItems.length = 0;
+    this.cartCountSubject.next(0);
   }
 }

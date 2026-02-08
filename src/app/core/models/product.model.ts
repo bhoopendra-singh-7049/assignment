@@ -1,3 +1,5 @@
+import { IPromoProductModel } from "./promo-product.model";
+
 export interface IProductModel {
     id: number;
     title: string;
@@ -21,6 +23,7 @@ export interface ProductData {
         categoryId: string;
     }[];
     products: IProductModel[];
+    promoProducts: IPromoProductModel[];
 }
 
 export interface IProductCategoryModel {
